@@ -18,7 +18,7 @@ public class GrokkingAlgorithms {
 			System.out.println(e.getMessage());
 		}
 
-		int[] array2 = new int[]{5, 3, 6, 2, 10};
+		Integer[] array2 = new Integer[]{5, 3, 6, 2, 10, -1, -100};
 
 		SelectionSort ss = new SelectionSort();
 		int smallestIndex = ss.findSmallest(array2);
