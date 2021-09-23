@@ -1,6 +1,7 @@
 import algorithms.BinarySearch;
 import algorithms.SelectionSort;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class GrokkingAlgorithms {
@@ -24,5 +25,7 @@ public class GrokkingAlgorithms {
 		int smallestIndex = ss.findSmallest(array2);
 
 		System.out.println(smallestIndex +  " -> " + array2[smallestIndex] + "\n");
+
+		System.out.println(Arrays.toString(ss.selectionSort(array2)) + "\n");
 	}
 }

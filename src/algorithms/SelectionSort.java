@@ -19,4 +19,17 @@ public class SelectionSort {
 
 		return smallestIndex;
 	}
+
+	public Integer[] selectionSort(Integer[] array) {
+		Integer[] newArray = new Integer[array.length];
+		int smallestIndex;
+
+		for (int i = 0; i < array.length; i++) {
+			smallestIndex = findSmallest(array);
+			newArray[i] = array[smallestIndex];
+			array[smallestIndex] = null;
+		}
+
+		return newArray;
+	}
 }
