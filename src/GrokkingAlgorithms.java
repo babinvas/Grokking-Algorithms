@@ -15,6 +15,8 @@ public class GrokkingAlgorithms {
 		selectionSort(new Integer[]{5, 3, 6, 2, 10, -1, -100});
 
 		countdownWitRecursion(5);
+
+		factorial(5);
 	}
 
 	private static void binarySearch(int item, int[] array) {
@@ -49,5 +51,11 @@ public class GrokkingAlgorithms {
 
 		System.out.println();
 	}
-}
 
+	private static void factorial(int number) {
+		Recursion recursion = new Recursion();
+
+		System.out.println("Calculating the factorial of the number " + number + " using recursion.\n"
+				+ "The factorial of the number is " + recursion.factorial(number) + ".\n");
+	}
+}

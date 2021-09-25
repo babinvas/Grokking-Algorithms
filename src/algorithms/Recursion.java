@@ -18,4 +18,12 @@ public class Recursion {
 			countdown(from - 1);
 		}
 	}
+
+	public int factorial(int number) {
+		if (number == 1) {
+			return 1;
+		} else {
+			return number * factorial(number - 1);
+		}
+	}
 }
