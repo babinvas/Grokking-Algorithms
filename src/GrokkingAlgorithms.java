@@ -1,4 +1,5 @@
 import algorithms.BinarySearch;
+import algorithms.QuickSort;
 import algorithms.Recursion;
 import algorithms.SelectionSort;
 
@@ -17,6 +18,8 @@ public class GrokkingAlgorithms {
 		countdownWitRecursion(5);
 
 		factorial(5);
+
+		euclideanAlgorithm(1680, 640);
 	}
 
 	private static void binarySearch(int item, int[] array) {
@@ -57,5 +60,13 @@ public class GrokkingAlgorithms {
 
 		System.out.println("Calculating the factorial of the number " + number + " using recursion.\n"
 				+ "The factorial of the number is " + recursion.factorial(number) + ".\n");
+	}
+
+	private static void euclideanAlgorithm(int sideA, int sideB) {
+		QuickSort quickSort = new QuickSort();
+		int SideOfSquare = quickSort.euclideanAlgorithm(sideA, sideB);
+
+		System.out.printf("The rectangle has sides %d and %d.\n"
+				+ "The rectangle can be divided equally into the largest squares with side %d.\n", sideA, sideB, SideOfSquare);
 	}
 }
