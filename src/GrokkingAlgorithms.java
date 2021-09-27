@@ -3,7 +3,9 @@ import algorithms.QuickSort;
 import algorithms.Recursion;
 import algorithms.SelectionSort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class GrokkingAlgorithms {
@@ -20,6 +22,8 @@ public class GrokkingAlgorithms {
 		factorial(5);
 
 		euclideanAlgorithm(1680, 640);
+
+		sumOfElement(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 	}
 
 	private static void binarySearch(int item, int[] array) {
@@ -67,6 +71,12 @@ public class GrokkingAlgorithms {
 		int SideOfSquare = quickSort.euclideanAlgorithm(sideA, sideB);
 
 		System.out.printf("The rectangle has sides %d and %d.\n"
-				+ "The rectangle can be divided equally into the largest squares with side %d.\n", sideA, sideB, SideOfSquare);
+				+ "The rectangle can be divided equally into the largest squares with side %d.\n\n", sideA, sideB, SideOfSquare);
+	}
+
+	private static void sumOfElement(List<Integer> list) {
+		QuickSort quickSort = new QuickSort();
+
+		System.out.println("The sum of the elements of array " + list + " is " + quickSort.sumOfElement(list)+ ".\n");
 	}
 }
