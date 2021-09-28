@@ -11,24 +11,26 @@ import java.util.NoSuchElementException;
 public class GrokkingAlgorithms {
 
 	public static void main(String[] args) {
-		binarySearch(10, new int[]{-10, -2, 1, 3, 4, 10, 25});
+		// Binary search
+		findElement(10, new int[]{-10, -2, 1, 3, 4, 10, 25});
 
-		smallestIndex(new Integer[]{5, 3, 6, 2, 10, -1, -100});
+		findSmallestIndex(new Integer[]{5, 3, 6, 2, 10, -1, -100});
 
-		selectionSort(new Integer[]{5, 3, 6, 2, 10, -1, -100});
+		// Selection sort
+		sortInAscendingOrder(new Integer[]{5, 3, 6, 2, 10, -1, -100});
 
+		// Recursion
 		countdownWitRecursion(5);
+		findFactorial(5);
 
-		factorial(5);
-
-		euclideanAlgorithm(1680, 640);
-
-		sumOfElement(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
+		// Quick sort
+		findLargestSquare(1680, 640);
+		calculateSumOfValues(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 	}
 
-	private static void binarySearch(int item, int[] array) {
+	private static void findElement(int item, int[] array) {
 		BinarySearch bs = new BinarySearch();
-		int itemIndex = bs.binarySearch(array, item);
+		int itemIndex = bs.findElement(array, item);
 
 		try {
 			System.out.println("Binary search for number " +  item +  " in the array. its index is " + itemIndex + ".\n");
@@ -37,17 +39,17 @@ public class GrokkingAlgorithms {
 		}
 	}
 
-	private static void smallestIndex(Integer[] array) {
+	private static void findSmallestIndex(Integer[] array) {
 		SelectionSort ss = new SelectionSort();
-		int smallestIndex = ss.findSmallest(array);
+		int smallestIndex = ss.findSmallestIndex(array);
 
 		System.out.println("The smallest number of the array is " + array[smallestIndex] +  ". its index is " + smallestIndex + ".\n");
 	}
 
-	private static void selectionSort(Integer[] array) {
+	private static void sortInAscendingOrder(Integer[] array) {
 		SelectionSort ss = new SelectionSort();
 
-		System.out.println("The selection sorting the array in ascending order: " + Arrays.toString(ss.selectionSort(array)) + ".\n");
+		System.out.println("The selection sorting the array in ascending order: " + Arrays.toString(ss.sortInAscendingOrder(array)) + ".\n");
 	}
 
 	private static void countdownWitRecursion(int from) {
@@ -59,24 +61,24 @@ public class GrokkingAlgorithms {
 		System.out.println();
 	}
 
-	private static void factorial(int number) {
+	private static void findFactorial(int number) {
 		Recursion recursion = new Recursion();
 
 		System.out.println("Calculating the factorial of the number " + number + " using recursion.\n"
-				+ "The factorial of the number is " + recursion.factorial(number) + ".\n");
+				+ "The factorial of the number is " + recursion.findFactorial(number) + ".\n");
 	}
 
-	private static void euclideanAlgorithm(int sideA, int sideB) {
+	private static void findLargestSquare(int sideA, int sideB) {
 		QuickSort quickSort = new QuickSort();
-		int SideOfSquare = quickSort.euclideanAlgorithm(sideA, sideB);
+		int SideOfSquare = quickSort.findLargestSquare(sideA, sideB);
 
 		System.out.printf("The rectangle has sides %d and %d.\n"
 				+ "The rectangle can be divided equally into the largest squares with side %d.\n\n", sideA, sideB, SideOfSquare);
 	}
 
-	private static void sumOfElement(List<Integer> list) {
+	private static void calculateSumOfValues(List<Integer> list) {
 		QuickSort quickSort = new QuickSort();
 
-		System.out.println("The sum of the elements of array " + list + " is " + quickSort.sumOfElement(list)+ ".\n");
+		System.out.println("The sum of the elements of array " + list + " is " + quickSort.calculateSumOfValues(list)+ ".\n");
 	}
 }

@@ -12,18 +12,17 @@ public class Recursion {
 
 		if (from <= 0) {
 			System.out.println("...Start");
-			return;
 		} else {
 			System.out.print("...");
 			countdown(from - 1);
 		}
 	}
 
-	public int factorial(int number) {
+	public int findFactorial(int number) {
 		if (number == 1) {
 			return 1;
 		} else {
-			return number * factorial(number - 1);
+			return number * findFactorial(number - 1);
 		}
 	}
 }

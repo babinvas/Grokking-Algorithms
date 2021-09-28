@@ -4,7 +4,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class QuickSort {
-	public int euclideanAlgorithm(int sideA, int sideB) {
+	public int findLargestSquare(int sideA, int sideB) {
+		// Euclidean algorithm
+
 		if (sideB > sideA) {
 			int helper = sideA;
 			sideA = sideB;
@@ -15,17 +17,17 @@ public class QuickSort {
 			return sideB;
 		} else {
 			sideA = sideA % sideB;
-			return euclideanAlgorithm(sideA, sideB);
+			return findLargestSquare(sideA, sideB);
 		}
 	}
 
-	public int sumOfElement(List<Integer> list) {
+	public int calculateSumOfValues(List<Integer> list) {
 		Iterator<Integer> iterator = list.iterator();
 
 		if (iterator.hasNext()) {
 			int element = iterator.next();
 			iterator.remove();
-			return element + sumOfElement(list);
+			return element + calculateSumOfValues(list);
 		}
 
 		return 0;

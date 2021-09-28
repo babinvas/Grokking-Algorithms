@@ -1,7 +1,7 @@
 package algorithms;
 
 public class SelectionSort {
-	public int findSmallest(Integer[] array) {
+	public int findSmallestIndex(Integer[] array) {
 		Integer smallest = array[0];
 		int smallestIndex = 0;
 
@@ -20,12 +20,12 @@ public class SelectionSort {
 		return smallestIndex;
 	}
 
-	public Integer[] selectionSort(Integer[] array) {
+	public Integer[] sortInAscendingOrder(Integer[] array) {
 		Integer[] newArray = new Integer[array.length];
 		int smallestIndex;
 
 		for (int i = 0; i < array.length; i++) {
-			smallestIndex = findSmallest(array);
+			smallestIndex = findSmallestIndex(array);
 			newArray[i] = array[smallestIndex];
 			array[smallestIndex] = null;
 		}
