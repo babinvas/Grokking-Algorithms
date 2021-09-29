@@ -32,4 +32,16 @@ public class QuickSort {
 
 		return 0;
 	}
+
+	public int calculatesNumberElements(List<Integer> list) {
+		Iterator<Integer> iterator = list.iterator();
+
+		if (iterator.hasNext()) {
+			iterator.next();
+			iterator.remove();
+			return 1 + calculatesNumberElements(list);
+		}
+
+		return 0;
+	}
 }

@@ -26,6 +26,7 @@ public class GrokkingAlgorithms {
 		// Quick sort
 		findLargestSquare(1680, 640);
 		calculateSumOfValues(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
+		calculatesNumberElements(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -79,6 +80,12 @@ public class GrokkingAlgorithms {
 	private static void calculateSumOfValues(List<Integer> list) {
 		QuickSort quickSort = new QuickSort();
 
-		System.out.println("The sum of the elements of array " + list + " is " + quickSort.calculateSumOfValues(list)+ ".\n");
+		System.out.println("The sum of the element values of array " + list + " is " + quickSort.calculateSumOfValues(list)+ ".\n");
+	}
+
+	private static void calculatesNumberElements(List<Integer> list) {
+		QuickSort quickSort = new QuickSort();
+
+		System.out.println("The number of the elements of array " + list + " is " + quickSort.calculatesNumberElements(list)+ ".\n");
 	}
 }
