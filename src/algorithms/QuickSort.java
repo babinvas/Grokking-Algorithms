@@ -44,4 +44,23 @@ public class QuickSort {
 
 		return 0;
 	}
+
+	public Integer findLargestElement(List<Integer> list) {
+		Iterator<Integer> iterator = list.iterator();
+
+		if (iterator.hasNext()) {
+			Integer element = iterator.next();
+			iterator.remove();
+
+			Integer pastElement = findLargestElement(list);
+
+			if (pastElement == null) {
+				return element;
+			}
+
+			return element > pastElement ? element : pastElement;
+		}
+
+		return null;
+	}
 }
