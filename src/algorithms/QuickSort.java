@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -62,5 +63,40 @@ public class QuickSort {
 		}
 
 		return null;
+	}
+
+	public List<Integer> sortInAscendingOrder(List<Integer> list) {
+		int length = list.size();
+
+		if (length < 2) {
+			return list;
+		}
+
+		int middle = length / 2;
+		Integer pivot = list.get(middle);
+		List<Integer> less = new ArrayList<>();
+		List<Integer> greater = new ArrayList<>();
+
+		for (int i = 0; i < length; i++) {
+			if (i == middle) {
+				continue;
+			}
+
+			Integer element = list.get(i);
+
+			if (element > pivot) {
+				greater.add(element);
+			} else {
+				less.add(element);
+			}
+		}
+
+		less = sortInAscendingOrder(less);
+		greater = sortInAscendingOrder(greater);
+
+		less.add(pivot);
+		less.addAll(greater);
+
+		return less;
 	}
 }

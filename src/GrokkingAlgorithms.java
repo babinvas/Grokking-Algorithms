@@ -17,7 +17,7 @@ public class GrokkingAlgorithms {
 		findSmallestIndex(new Integer[]{5, 3, 6, 2, 10, -1, -100});
 
 		// Selection sort
-		sortInAscendingOrder(new Integer[]{5, 3, 6, 2, 10, -1, -100});
+		selectionSortInAscendingOrder(new Integer[]{5, 3, 6, 2, 10, -1, -100});
 
 		// Recursion
 		countdownWitRecursion(5);
@@ -28,6 +28,7 @@ public class GrokkingAlgorithms {
 		calculateSumOfValues(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 		calculatesNumberElements(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 		findLargestElement(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
+		quickSortInAscendingOrder(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -35,7 +36,7 @@ public class GrokkingAlgorithms {
 		int itemIndex = bs.findElement(array, item);
 
 		try {
-			System.out.println("Binary search for number " +  item +  " in the array. its index is " + itemIndex + ".\n");
+			System.out.println("Binary search for number " +  item +  " in the array " + Arrays.toString(array) + ". its index is " + itemIndex + ".\n");
 		} catch (NoSuchElementException e) {
 			System.out.println(e.getMessage());
 		}
@@ -45,13 +46,13 @@ public class GrokkingAlgorithms {
 		SelectionSort ss = new SelectionSort();
 		int smallestIndex = ss.findSmallestIndex(array);
 
-		System.out.println("The smallest number of the array is " + array[smallestIndex] +  ". its index is " + smallestIndex + ".\n");
+		System.out.println("The smallest number of the array " + Arrays.toString(array) + " is " + array[smallestIndex] +  ". its index is " + smallestIndex + ".\n");
 	}
 
-	private static void sortInAscendingOrder(Integer[] array) {
+	private static void selectionSortInAscendingOrder(Integer[] array) {
 		SelectionSort ss = new SelectionSort();
 
-		System.out.println("The selection sorting the array in ascending order: " + Arrays.toString(ss.sortInAscendingOrder(array)) + ".\n");
+		System.out.println("The selection sorting the array " + Arrays.toString(array) +" in ascending order: " + Arrays.toString(ss.sortInAscendingOrder(array)) + ".\n");
 	}
 
 	private static void countdownWitRecursion(int from) {
@@ -94,5 +95,11 @@ public class GrokkingAlgorithms {
 		QuickSort quickSort = new QuickSort();
 
 		System.out.println("The largest element of the array " + list + " is " + quickSort.findLargestElement(list)+ ".\n");
+	}
+
+	private static void quickSortInAscendingOrder(List<Integer> list) {
+		QuickSort quickSort = new QuickSort();
+
+		System.out.println("The quick sorting the array " + list + " in ascending order: " + quickSort.sortInAscendingOrder(list)+ ".\n");
 	}
 }
