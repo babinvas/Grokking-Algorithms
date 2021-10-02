@@ -1,12 +1,6 @@
-import algorithms.BinarySearch;
-import algorithms.QuickSort;
-import algorithms.Recursion;
-import algorithms.SelectionSort;
+import algorithms.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class GrokkingAlgorithms {
 
@@ -29,6 +23,9 @@ public class GrokkingAlgorithms {
 		calculatesNumberElements(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 		findLargestElement(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
 		quickSortInAscendingOrder(new ArrayList<>(Arrays.asList(5, 3, 6, 2, 10, -1, -100)));
+
+		// Graphs
+		breadthFirstSearch();
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -101,5 +98,27 @@ public class GrokkingAlgorithms {
 		QuickSort quickSort = new QuickSort();
 
 		System.out.println("The quick sorting the array " + list + " in ascending order: " + quickSort.sortInAscendingOrder(list)+ ".\n");
+	}
+
+	private static void breadthFirstSearch() {
+		Map<String, String[]> graphs = new HashMap<>();
+
+		graphs.put("you", new String[]{"alice", "bob", "claire_seller"});
+		graphs.put("bob", new String[]{"anuj", "peggy"});
+		graphs.put("alice", new String[]{"peggy"});
+		graphs.put("claire_seller", new String[]{"thom_seller", "jonny"});
+		graphs.put("anuj", new String[]{});
+		graphs.put("peggy", new String[]{});
+		graphs.put("thom_seller", new String[]{});
+		graphs.put("jonny", new String[]{});
+
+		Graph graph = new Graph();
+		String firstPerson = "you";
+
+		try {
+			System.out.println(graph.breadthFirstSearch(graphs, firstPerson) + " is а mango seller!\n");
+		} catch (NoSuchElementException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }
