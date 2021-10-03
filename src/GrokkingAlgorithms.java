@@ -26,6 +26,7 @@ public class GrokkingAlgorithms {
 
 		// Graphs
 		breadthFirstSearch();
+		dijkstraAlgorithmExample1();
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -120,5 +121,31 @@ public class GrokkingAlgorithms {
 		} catch (NoSuchElementException e) {
 			System.out.println(e.getMessage());
 		}
+	}
+
+	private static void dijkstraAlgorithmExample1() {
+		Map<String, Map<String, Integer>> graphs = new HashMap<>();
+		String start = "start";
+		String end = "end";
+
+		Map<String, Integer> neighbors = new HashMap<>();
+		neighbors.put("a", 6);
+		neighbors.put("b", 2);
+		graphs.put(start, neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put(end, 1);
+		graphs.put("a", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("a", 3);
+		neighbors.put(end, 5);
+		graphs.put("b", neighbors);
+
+		neighbors = new HashMap<>();
+		graphs.put(end, null);
+
+		Graph graph = new Graph();
+		System.out.println("The fastest path from the start to end is " + graph.dijkstraAlgorithm(graphs, start, end) + ".\n");
 	}
 }
