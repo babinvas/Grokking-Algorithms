@@ -27,6 +27,8 @@ public class GrokkingAlgorithms {
 		// Graphs
 		breadthFirstSearch();
 		dijkstraAlgorithmExample1();
+		dijkstraAlgorithmExample2();
+		dijkstraAlgorithmExample3();
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -142,7 +144,68 @@ public class GrokkingAlgorithms {
 		neighbors.put(end, 5);
 		graphs.put("b", neighbors);
 
+		graphs.put(end, null);
+
+		Graph graph = new Graph();
+		System.out.println("The fastest path from the start to end is " + graph.dijkstraAlgorithm(graphs, start, end) + ".\n");
+	}
+
+	private static void dijkstraAlgorithmExample2() {
+		Map<String, Map<String, Integer>> graphs = new HashMap<>();
+		String start = "start";
+		String end = "end";
+
+		Map<String, Integer> neighbors = new HashMap<>();
+		neighbors.put("a", 5);
+		neighbors.put("b", 2);
+		graphs.put(start, neighbors);
+
 		neighbors = new HashMap<>();
+		neighbors.put("c", 4);
+		neighbors.put("d", 2);
+		graphs.put("a", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("d", 7);
+		graphs.put("b", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("d", 6);
+		neighbors.put(end, 3);
+		graphs.put("c", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put(end, 1);
+		graphs.put("d", neighbors);
+
+		graphs.put(end, null);
+
+		Graph graph = new Graph();
+		System.out.println("The fastest path from the start to end is " + graph.dijkstraAlgorithm(graphs, start, end) + ".\n");
+	}
+
+	private static void dijkstraAlgorithmExample3() {
+		Map<String, Map<String, Integer>> graphs = new HashMap<>();
+		String start = "start";
+		String end = "end";
+
+		Map<String, Integer> neighbors = new HashMap<>();
+		neighbors.put("a", 10);
+		graphs.put(start, neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("b", 20);
+		graphs.put("a", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("c", 1);
+		neighbors.put(end, 30);
+		graphs.put("b", neighbors);
+
+		neighbors = new HashMap<>();
+		neighbors.put("a", 1);
+		graphs.put("c", neighbors);
+
 		graphs.put(end, null);
 
 		Graph graph = new Graph();
