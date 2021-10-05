@@ -29,6 +29,9 @@ public class GrokkingAlgorithms {
 		dijkstraAlgorithmExample1();
 		dijkstraAlgorithmExample2();
 		dijkstraAlgorithmExample3();
+
+		// Greedy Algorithm
+		findBestStations();
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -210,5 +213,19 @@ public class GrokkingAlgorithms {
 
 		Graph graph = new Graph();
 		System.out.println("The fastest path from the start to end is " + graph.dijkstraAlgorithm(graphs, start, end) + ".\n");
+	}
+
+	private static void findBestStations() {
+		Set<String> statesNeeded = new HashSet<>(Arrays.asList("mt", "wa", "or", "id", "nv", "ut", "са", "az"));
+
+		Map<String, Set<String>> stations = new HashMap<>();
+		stations.put("kone", new HashSet<>(Arrays.asList("id", "nv", "ut")));
+		stations.put("ktwo", new HashSet<>(Arrays.asList("wa", "id", "mt")));
+		stations.put("kthree", new HashSet<>(Arrays.asList("or", "nv", "са")));
+		stations.put("kfour", new HashSet<>(Arrays.asList("nv", "ut")));
+		stations.put("kfive", new HashSet<>(Arrays.asList("ca", "az")));
+
+		GreedyAlgorithm ga = new GreedyAlgorithm();
+		System.out.println("The best stations is " + ga.greedyAlgorithm(statesNeeded, stations) + ".\n");
 	}
 }
