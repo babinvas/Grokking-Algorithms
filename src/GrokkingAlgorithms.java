@@ -32,6 +32,9 @@ public class GrokkingAlgorithms {
 
 		// Greedy Algorithm
 		findBestStations();
+
+		findLongestCommonSubstring("hish", new String[]{"fish", "vista"});
+		findLongestCommonSubstring("hortis", new String[]{"fort", "fish"});
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -227,5 +230,10 @@ public class GrokkingAlgorithms {
 
 		GreedyAlgorithm ga = new GreedyAlgorithm();
 		System.out.println("The best stations is " + ga.greedyAlgorithm(statesNeeded, stations) + ".\n");
+	}
+
+	public static void findLongestCommonSubstring(String mainWord, String[] words) {
+		DynamicProgramming dynamicProgramming = new DynamicProgramming();
+		System.out.printf("TThe longest common substring of the word '%s' and the array %s is '%s'.\n", mainWord, Arrays.toString(words), dynamicProgramming.findLongestCommonSubstring(mainWord, words));
 	}
 }
