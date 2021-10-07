@@ -33,8 +33,11 @@ public class GrokkingAlgorithms {
 		// Greedy Algorithm
 		findBestStations();
 
+		// Dynamic programming
 		findLongestCommonSubstring("hish", new String[]{"fish", "vista"});
-		findLongestCommonSubstring("hortis", new String[]{"fort", "fish"});
+		findLongestCommonSubstring("horis", new String[]{"fort", "fish"});
+		findLongestCommonSubsequence("hisw", new String[]{"fish", "vista"});
+		findLongestCommonSubsequence("fosh", new String[]{"fort", "fish"});
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -232,8 +235,13 @@ public class GrokkingAlgorithms {
 		System.out.println("The best stations is " + ga.greedyAlgorithm(statesNeeded, stations) + ".\n");
 	}
 
-	public static void findLongestCommonSubstring(String mainWord, String[] words) {
+	private static void findLongestCommonSubstring(String mainWord, String[] words) {
 		DynamicProgramming dynamicProgramming = new DynamicProgramming();
-		System.out.printf("TThe longest common substring of the word '%s' and the array %s is '%s'.\n", mainWord, Arrays.toString(words), dynamicProgramming.findLongestCommonSubstring(mainWord, words));
+		System.out.printf("The longest common substring of the word '%s' and the array %s is '%s'.\n\n", mainWord, Arrays.toString(words), dynamicProgramming.findLongestCommonSubstring(mainWord, words));
+	}
+
+	private static void findLongestCommonSubsequence(String mainWord, String[] words) {
+		DynamicProgramming dynamicProgramming = new DynamicProgramming();
+		System.out.printf("The longest common subsequence of the word '%s' and the array %s is '%s'.\n\n", mainWord, Arrays.toString(words), dynamicProgramming.findLongestCommonSubsequence(mainWord, words));
 	}
 }
