@@ -30,7 +30,7 @@ public class GrokkingAlgorithms {
 		dijkstraAlgorithmExample2();
 		dijkstraAlgorithmExample3();
 
-		// Greedy Algorithm
+		// Greedy algorithm
 		findBestStations();
 
 		// Dynamic programming
@@ -38,6 +38,9 @@ public class GrokkingAlgorithms {
 		findLongestCommonSubstring("horis", new String[]{"fort", "fish"});
 		findLongestCommonSubsequence("hisw", new String[]{"fish", "vista"});
 		findLongestCommonSubsequence("fosh", new String[]{"fort", "fish"});
+
+		// k-nearest neighbors algorithm
+		findDistanceToNeighbors();
 	}
 
 	private static void findElement(int item, int[] array) {
@@ -243,5 +246,20 @@ public class GrokkingAlgorithms {
 	private static void findLongestCommonSubsequence(String mainWord, String[] words) {
 		DynamicProgramming dynamicProgramming = new DynamicProgramming();
 		System.out.printf("The longest common subsequence of the word '%s' and the array %s is '%s'.\n\n", mainWord, Arrays.toString(words), dynamicProgramming.findLongestCommonSubsequence(mainWord, words));
+	}
+
+	private static void findDistanceToNeighbors() {
+		Map<String, int[]> users = new HashMap<>();
+		users.put("Priyanka", new int[] {3, 4, 4, 1, 4});
+		users.put("Justin", new int[] {4, 3, 5, 1, 5});
+		users.put("Morpheus", new int[] {2, 5, 1, 3, 1});
+
+		KNearestNeighborsAlgorithm kNearestNeighborsAlgorithm = new KNearestNeighborsAlgorithm();
+		String mainUser = "Priyanka";
+		Map<String, Integer> distanceToNeighbors = kNearestNeighborsAlgorithm.findDistanceToNeighbors(mainUser, users);
+
+		System.out.println("The users are:");
+		users.forEach((key, value) -> System.out.println(key + " : " + Arrays.toString(value)));
+		System.out.printf("The distance from '%s' to other users : '%s'.\n\n", mainUser, distanceToNeighbors.toString());
 	}
 }
